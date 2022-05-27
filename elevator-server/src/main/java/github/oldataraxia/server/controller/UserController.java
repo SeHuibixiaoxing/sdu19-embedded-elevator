@@ -1,0 +1,40 @@
+package github.oldataraxia.server.controller;
+
+import github.oldataraxia.server.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+
+    @GetMapping("/listUser")
+    public List<String> listUser() {
+        return userService.listUser();
+    }
+
+    @PostMapping("/register")
+    public boolean register (
+            @RequestParam("username") String username,
+            @RequestParam("nfc") String nfc
+    ) {
+        System.out.println("username: " + username);
+        System.out.println("nfc: " + nfc);
+        return userService.register(username, nfc);
+    }
+
+    @PostMapping("/card")
+    public boolean card (@RequestParam("nfc") String nfc) {
+        return userService.card(nfc);
+    }
+
+}
