@@ -1,4 +1,4 @@
-package github.oldataraxia.server.entity;
+package github.oldataraxia.server.Entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
@@ -42,5 +42,8 @@ public class UserDo{
 
     @TableField(value = UserDOField.NFC)
     private String nfc;
+
+    @TableField(value = UserDOField.ROLE)
+    private String role;
 
 }

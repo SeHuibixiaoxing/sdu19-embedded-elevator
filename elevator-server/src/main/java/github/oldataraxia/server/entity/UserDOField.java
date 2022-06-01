@@ -1,4 +1,4 @@
-package github.oldataraxia.server.entity;
+package github.oldataraxia.server.Entity;
 
 public interface UserDOField {
     String TABLE_NAME = "user";
@@ -11,4 +11,5 @@ public interface UserDOField {
     String SALT = "u_salt";
     String PASSWORD = "u_password";
     String NFC = "u_nfc";
+    String ROLE = "u_role";
 }
